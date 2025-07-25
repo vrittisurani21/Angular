@@ -1,0 +1,54 @@
+<form [formGroup]="userform">
+    Name<input type="text" placeholder="Enter Name" formControlName="name"/>
+    <br>
+    <span *ngIf="userform.get('name')?.invalid && userform.controls.name.touched">
+        <span *ngIf="userform.get('name')?.errors?.['required']">Please Enter Name!</span>
+        <span *ngIf="userform.get('name')?.errors?.['minlength']">Please Enter Valid Name (min 3 characters)!</span>
+    </span>    <br>
+    Email<input type="text" placeholder="Enter Email" formControlName="email" />
+    <br>
+    <span *ngIf="userform.get('email')?.invalid && userform.controls.email.touched" >
+        <span *ngIf="userform.get('email')?.errors?.['required']">Please Enter Email!</span>
+        <span *ngIf="userform.get('email')?.errors?.['pattern']">Please Enter Valid Email!</span>
+    </span>
+    <br>
+     Phone<input type="text" placeholder="Enter Contact Number" formControlName="number"/>
+    <br>
+    <span *ngIf="userform.get('number')?.invalid && userform.controls.number.touched">
+        <span *ngIf="userform.get('number')?.errors?.['required']">Please Enter Contact Number!</span>
+        <span *ngIf="userform.get('number')?.errors?.['pattern']">Please Enter Valid Contact Number!</span>
+    </span>
+    <br>
+    <button [disabled]="userform.invalid" (click)="save()">Submit</button>
+</form>
+<!-- 
+<form [formGroup]="userform">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Enter Full Name" formControlName="name">
+        <div>
+            <div style="color: red;" *ngIf="userform.get('name')?.errors?.['required']" >Please enter valid name.</div>
+            <div *ngIf="userform.get('name')?.errors?.['minlength']" style="color:red"> Name should contain minimum 3 letters </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="Email" class="form-label">Email</label>
+        <input type="email" placeholder="Enter Email" formControlName="email">
+        <div>
+            <div style="color: red;" *ngIf="userform.get('email')?.errors?.['required']" >Please enter email.</div>
+            <div *ngIf="userform.get('email')?.errors?.['pattern']" style="color:red"> enter valid email</div>
+        </div>    
+    </div>
+
+    <div class="mb-3">
+        <label for="Contact" class="form-label">Contact</label>
+        <input type="text" class="form-control"  placeholder="Enter Contact Number" formControlName="number">
+        <div>
+            <div style="color: red;" *ngIf="userform.get('numbe')?.errors?.['required']" >Please enter number.</div>
+            <div *ngIf="userform.get('number')?.errors?.['pattern']" style="color:red"> enter valid number </div>
+        </div>      </div>
+
+    <button type="submit" [disabled]="userform.invalid" class="btn btn-primary" (click)="save()">Submit</button>
+</form>
+ -->

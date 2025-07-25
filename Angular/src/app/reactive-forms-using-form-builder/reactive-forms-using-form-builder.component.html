@@ -1,0 +1,41 @@
+<form [formGroup]="userForm">
+    Name<input type="text" formControlName="Name" placeholder="enter name">
+    <br>
+    <span *ngIf="userForm.get('Name')?.invalid && userForm.get('Name')?.touched">
+        <span *ngIf="userForm.get('Name')?.errors?.['required']">Please Enter Name!</span>
+        <span *ngIf="userForm.get('Name')?.errors?.['minlength']">Please Enter Valid Name (min 3 characters)!</span>
+    </span>
+    <br>
+
+    Age<input type="text" formControlName="Age" placeholder="enter age">
+    <br>
+    <span *ngIf="userForm.get('Age')?.invalid && userForm.get('Age')?.touched">
+        <span *ngIf="userForm.get('Age')?.errors?.['required']">Please Enter Age!</span>
+    </span>
+    <br>
+
+    Email<input type="text" formControlName="Email" placeholder="enter email">
+    <br>
+    <span *ngIf="userForm.get('Email')?.invalid && userForm.get('Email')?.touched">
+        <span *ngIf="userForm.get('Email')?.errors?.['required']">Please Enter Email!</span>
+        <span *ngIf="userForm.get('Email')?.errors?.['pattern']">Please Enter Valid Email!</span>
+    </span>
+    <br>
+
+    Contact<input type="text" formControlName="Contact" placeholder="enter contact number">
+    <br>
+    <span *ngIf="userForm.get('Contact')?.invalid && userForm.get('Contact')?.touched">
+        <span *ngIf="userForm.get('Contact')?.errors?.['required']">Please Enter Contact Number!</span>
+        <span *ngIf="userForm.get('Contact')?.errors?.['pattern']">Please Enter Valid Contact Number!</span>
+    </span>
+    <br>
+
+    SPI <input type="text" formControlName="SPI" placeholder="enter SPI">
+    <br>
+    <span *ngIf="userForm.get('SPI')?.invalid && userForm.get('SPI')?.touched">
+        <span *ngIf="userForm.get('SPI')?.errors?.['required']">Please Enter SPI!</span>
+        <span *ngIf="userForm.get('SPI')?.errors?.['pattern']">Please Enter Valid SPI!</span>
+    </span>
+    <br>
+    <button [disabled]="userForm.invalid" (click)="save()">Submit</button>
+</form>

@@ -1,0 +1,44 @@
+
+<!-- ngIf -->
+
+<h1 *ngIf="name else elseBlock">Vritti</h1>
+<ng-template #elseBlock>
+<h1>Aditi</h1>
+</ng-template>
+<button (click)="tgValue()">Toggle</button> 
+
+<br>
+<br>
+
+<!-- ngStyle -->
+
+
+<button (click)="Start()">Start Light</button>
+<button (click)="Stop()">Stop Light</button>
+<div [ngStyle]="obj"></div>
+
+<br>
+
+<!-- ngSwitch -->
+
+<div>
+  
+    <input type="text" placeholder="Enter a day" [(ngModel)]="dayInput" ></div>
+    
+    <div [ngSwitch]="dayInput?.toLowerCase()">
+      <p *ngSwitchCase="'monday'">Monday</p>
+      <p *ngSwitchCase="'tuesday'">Tuesday</p>
+      <p *ngSwitchCase="'wednesday'">Wednesday</p>
+      <p *ngSwitchCase="'thursday'">Thursday</p>
+      <p *ngSwitchCase="'friday'">Friday</p>
+      <p *ngSwitchCase="'saturday'">Saturday</p>
+      <p *ngSwitchCase="'sunday'">Sunday</p>
+      <p *ngSwitchDefault>enter a valid day</p>
+    </div>
+    
+
+<!-- ngclass -->
+
+<h1 [ngClass]="'first second'">Vritti</h1>
+<h1 [ngClass]="['second']">Rajvi</h1>
+<h1 [ngClass]="classObj">Drashti</h1>

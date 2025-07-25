@@ -1,0 +1,35 @@
+<form [formGroup]="SignUpForm">
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <input type="text" formControlName="UserName" placeholder="enter username">
+        <br>
+        <span *ngIf="SignUpForm.get('UserName')?.invalid && SignUpForm.get('UserName')?.touched">
+            <span *ngIf="SignUpForm.get('UserName')?.errors?.['required']">Please Enter Name!</span>
+            <span *ngIf="SignUpForm.get('UserName')?.errors?.['minlength']">Please Enter Valid Name (min 3 characters)!</span>
+        </span>
+
+        <input type="password" formControlName="Password" placeholder="enter password">
+        <br>
+        <span *ngIf="SignUpForm.get('Password')?.invalid && SignUpForm.get('Password')?.touched">
+            <span *ngIf="SignUpForm.get('Password')?.errors?.['required']">Please Enter Password!</span>
+            <span *ngIf="SignUpForm.get('Password')?.errors?.['pattern']">Please Enter Valid Password!</span>
+        </span>
+
+        <input type="text" formControlName="Email" placeholder="enter email">
+        <br>
+        <span *ngIf="SignUpForm.get('Email')?.invalid && SignUpForm.get('Email')?.touched">
+            <span *ngIf="SignUpForm.get('Email')?.errors?.['required']">Please Enter Email!</span>
+            <span *ngIf="SignUpForm.get('Email')?.errors?.['pattern']">Please Enter Valid Email!</span>
+        </span>
+
+        <input type="text" formControlName="Contact" placeholder="enter contact number">
+        <br>
+        <span *ngIf="SignUpForm.get('Contact')?.invalid && SignUpForm.get('Contact')?.touched">
+            <span *ngIf="SignUpForm.get('Contact')?.errors?.['required']">Please Enter Contact Number!</span>
+            <span *ngIf="SignUpForm.get('Contact')?.errors?.['pattern']">Please Enter Valid Contact Number!</span>
+        </span>
+        <br>
+
+        <button type="submit" (click)="signUpUser(SignUpForm.value)">Sign Up</button>
+    </div>
+</form>
