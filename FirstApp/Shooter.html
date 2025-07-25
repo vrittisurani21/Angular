@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shooter Game</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden; 
+        }
+        #scorePlace {
+            font-size: 30px;
+            color: blue;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+        #target {
+            position: absolute;
+            width: 70px;
+            cursor: pointer; 
+        }
+    </style>
+</head>
+<body>
+    <h1 id="scorePlace">Score: 0</h1>
+    <img src="https://th.bing.com/th/id/OIP.o95fHU4ian5ba33ZRatrbwHaHj?rs=1&pid=ImgDetMain" id="target" alt="Target" onclick="addScore()" />
+
+    <script>
+        let currentScore = 0;
+
+        function addScore() {
+            currentScore++;
+            updateScoreDisplay();
+            changePosition();
+        }
+
+        function updateScoreDisplay() {
+            document.getElementById('scorePlace').innerText = "Score: " + currentScore;
+        }
+
+        function changePosition() {
+            const target = document.getElementById('target');
+            const imgWidth = target.offsetWidth;
+            const imgHeight = target.offsetHeight;
+
+        
+            const maxLeft = window.innerWidth - imgWidth;
+            const maxTop = window.innerHeight - imgHeight;
+
+            const leftPos = Math.floor(Math.random() * maxLeft);
+            const topPos = Math.floor(Math.random() * maxTop);
+
+            target.style.left = leftPos + "px";
+            target.style.top = topPos + "px";
+        }
+
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            changePosition(); 
+            setInterval(changePosition, 2000); 
+        });
+    </script>
+</body>
+</html>

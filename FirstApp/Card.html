@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Card</title>
+</head>
+<body>
+    <script>
+        let names = ["Vritti", "Drashti", "Rajvi", "Pooja", "Priya"];
+        for (let i = 0; i < names.length; i++) {
+            document.write('<div class="card" style="width: 18rem; margin: 10px;">');
+            document.write('<div class="card-body">');
+            document.write(`<h5 class="card-title">${names[i]}</h5>`);
+            document.write('</div>');
+            document.write('</div>');
+        }
+    </script>
+</body>
+</html>
