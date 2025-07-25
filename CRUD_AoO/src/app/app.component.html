@@ -1,0 +1,25 @@
+<table class="table table-striped" border="5">
+  <thead>
+    <tr>
+      <td><input type="text" placeholder="ENTER NAME" [(ngModel)]="obj.Name"></td>
+      <td><input type="text" placeholder="ENTER SURNAME" [(ngModel)]="obj.Surname">&nbsp;
+        <button value="Add" (click)="AddStudent()" class="btn btn-success">{{this.isEdit==-1?"Add":"Edit"}}</button></td>
+      <td colspan="3">
+        <input type="text" placeholder="SEARCH" [(ngModel)]="searchText" (input)="SearchStudent()">&nbsp;
+        <button (click)="SearchStudent()" class="btn btn-success">Search</button>
+      </td>
+    </tr>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Surname</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let temp of filteredArr; let i = index">
+      <td>{{temp.Name}}</td>
+      <td>{{temp.Surname}}</td>
+      <td><input type="button" value="Delete" (click)="DeleteStudent(i)" class="btn btn-danger">&nbsp;
+      <input type="button" value="Edit" (click)="EditStudent(i)" class="btn btn-info"></td>
+    </tr>
+  </tbody>
+</table>
