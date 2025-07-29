@@ -1,0 +1,262 @@
+<div class="container mt-5 mb-5">
+  <h2 class="text-center mb-4">Resume</h2>
+  <form>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Full Name</label>
+                  <input
+                      type="text"
+                      id="name"
+                      class="form-control"
+                      placeholder="Enter your full name"
+                      name="name"
+                      (input)="datafill($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Email Address</label>
+                  <input
+                      type="email"
+                      id="email"
+                      class="form-control"
+                      placeholder="Enter your email"
+                      name="email"
+                      (input)="datafill($event)"
+                      required
+                  />
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Phone Number</label>
+                  <input
+                      type="tel"
+                      id="phone"
+                      class="form-control"
+                      placeholder="Enter your phone number"
+                      name="phone"
+                      (input)="datafill($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Address</label>
+                  <input
+                      type="text"
+                      id="address"
+                      class="form-control"
+                      placeholder="Enter your address"
+                      name="address"
+                      (input)="datafill($event)"
+                      required
+                  />
+              </div>
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="name">Education</label>
+          <input
+              type="text"
+              id="education"
+              class="form-control"
+              placeholder="Enter your highest level of education"
+              name="education"
+              (input)="datafill($event)"
+              required
+          />
+      </div>
+      <div class="form-group">
+          <label for="name">Skills</label>
+          <input
+              type="text"
+              id="skills"
+              class="form-control"
+              placeholder="Enter your skills"
+              name="skills"
+              (input)="datafill($event)"
+              required
+          />
+      </div>
+      <div class="form-group">
+          <label for="name">Work Experience</label>
+          <textarea
+              id="experience"
+              class="form-control"
+              rows="4"
+              placeholder="Describe your work experience"
+              name="experience"
+              (input)="datafill($event)"
+              required
+          ></textarea>
+      </div>
+  </form>
+</div>
+
+
+<div class="container mt-5 mb-5">
+  <h2 class="text-center mb-4">Project Details</h2>
+  <form (submit)="addProject($event)">
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Project Name</label>
+                  <input
+                      type="text"
+                      id="pr_name"
+                      class="form-control"
+                      placeholder="Enter your full name"
+                      name="name"
+                      (input)="makeProject($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Project Description</label>
+                  <input
+                      type="text"
+                      id="pr_des"
+                      class="form-control"
+                      placeholder="Enter your email"
+                      name="email"
+                      (input)="makeProject($event)"
+                      required
+                  />
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Starting Date</label>
+                  <input
+                      type="date"
+                      id="pr_start"
+                      class="form-control"
+                      placeholder="Enter your phone number"
+                      name="phone"
+                      (input)="makeProject($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Ending Date</label>
+                  <input
+                      type="date"
+                      id="pr_end"
+                      class="form-control"
+                      placeholder="Enter your address"
+                      name="address"
+                      (input)="makeProject($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div>
+            <input type="submit"/>
+          </div>
+      </div>
+  </form>
+</div>
+
+<div class="container mt-5 mb-5">
+  <h2 class="text-center mb-4">Certificate Details</h2>
+  <form (submit)="addCertificate($event)">
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Certificate Name</label>
+                  <input
+                      type="text"
+                      id="cr_name"
+                      class="form-control"
+                      placeholder="Enter your full name"
+                      name="name"
+                      (input)="makeCertificate($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Institute Name</label>
+                  <input
+                      type="text"
+                      id="inst_name"
+                      class="form-control"
+                      placeholder="Enter your email"
+                      name="email"
+                      (input)="makeCertificate($event)"
+                      required
+                  />
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Course Name</label>
+                  <input
+                      type="text"
+                      id="course_name"
+                      class="form-control"
+                      placeholder="Enter your phone number"
+                      name="phone"
+                      (input)="makeCertificate($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-group">
+                  <label for="name">Certificate ID</label>
+                  <input
+                      type="text"
+                      id="pr_end"
+                      class="form-control"
+                      placeholder="Enter your address"
+                      name="address"
+                      (input)="makeCertificate($event)"
+                      required
+                  />
+              </div>
+          </div>
+          <div>
+            <input type="submit"/>
+          </div>
+      </div>
+  </form>
+
+  <table>
+    <tr *ngFor="let temp1 of student.projects">
+      <td>{{temp1.pr_name}}</td>
+      <td>{{temp1.pr_des}}</td>
+      <td>{{temp1.pr_start}}</td>
+      <td>{{temp1.pr_end}}</td>
+    </tr>
+  </table>
+
+  <table>
+    <tr *ngFor="let temp2 of student.certificates">
+      <td>{{temp2.cr_name}}</td>
+      <td>{{temp2.inst_name}}</td>
+      <td>{{temp2.course_name}}</td>
+      <td>{{temp2.cr_id}}</td>
+    </tr>
+  </table>
+
+  <h3 class="mt-5">All Details</h3>
+  <pre>{{ student | json }}</pre>
+
+</div>
