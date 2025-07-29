@@ -1,0 +1,15 @@
+<div class="container">
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <img src="{{userDetails.image}}" class="card-img-top" alt="...">
+                <h5 class="card-title">{{ userDetails.username }}</h5>
+                <p class="card-text">Email: {{ userDetails.email }}</p>
+                <p class="card-text">Password: {{ userDetails.password }}</p>
+                <br>
+                <button class="btn btn-secondary" (click)="goBack()">Back</button>
+                <button class="btn btn-danger" (click)="deleteUser()" ms-2>Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

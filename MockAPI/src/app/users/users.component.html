@@ -1,0 +1,19 @@
+<div class="container">
+  <button class="btn btn-primary" routerLink="/add">Add User</button>
+    <div class="row">
+  <div class="card" style="width: 18rem;" *ngFor="let temp of arr">
+    <img src="{{temp.image}}" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">{{temp.username}}</h5>
+      <p class="card-text">{{temp.email}}</p>
+      <a href="#" class="btn btn-secondary">{{temp.phoneNumber}}</a>
+    </div>
+    <br>
+    <button class="btn btn-primary" (click)="moreDetails(temp.id)">More Details</button>
+    <button class="btn btn-danger" (click)="deleteUser(temp.id)">Delete User</button>
+    <button class="btn btn-warning" routerLink="/edit/{{temp.id}}">Edit</button>
+    <br>
+  </div>
+
+  </div>
+  </div>
