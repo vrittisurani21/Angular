@@ -1,0 +1,18 @@
+.navbar { 
+    height: 150px;
+ }
+
+ .navbar-brand h4 { 
+    margin: 0; 
+    position: relative; 
+    top: -40px; 
+    left: 20px
+}
+
+.text {
+    margin: 0; 
+    position: relative; 
+    top: -35px; 
+    left: 20px;
+    color:lightgray
+}
